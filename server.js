@@ -11,7 +11,7 @@ app.post('/webhook', (req, res) => {
   console.log('Received Webhook:', req.body);
 
   // Save to file
-  fs.appendFile('webhookData.txt', JSON.stringify(req.body) + '\n', (err) => {
+  fs.appendFile('webhookData.log', JSON.stringify(req.body) + '\n', (err) => {
     if (err) {
       console.error('Failed to write to file', err);
       return res.status(500).send('Error saving data');
