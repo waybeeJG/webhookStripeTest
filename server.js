@@ -11,10 +11,11 @@ app.use(express.json());
 // Your webhook endpoint
 app.post('/webhook', (req, res) => {
   console.log('Received Webhook:', req.body);
-  var jsonObj = JSON.parse(req.body);
+
+  let jsonObj = req.body;
 
   // Save to file
-  log_file.write(jsonObj + '\n');
+  log_file.write(jsonObj.id + '\n');
 });
 
 app.listen(PORT, () => {
