@@ -15,7 +15,7 @@ app.post('/webhook', (req, res) => {
   let jsonObj = req.body;
 
   // Save to file
-  log_file.write('Event: ' + jsonObj.type + ' - ID: ' + jsonObj.id);
+  log_file.write('Event: ' + jsonObj.type + ' - ID: ' + jsonObj.id + '\n');
 });
 
 app.listen(PORT, () => {
