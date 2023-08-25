@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const fs = require('fs');
-var util = require('util');
 var log_file = fs.createWriteStream('webhookData.log', {flags : 'w'});
 
 // Middleware to parse JSON requests
